@@ -1,5 +1,6 @@
 package com.backend.email.domain;
 
+import com.backend.email.enums.EmailStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,14 +18,17 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Email {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-    private UUID from;
-    private UUID to;
+    private UUID userId;
+    private String from;
+    private String to;
     private String subject;
 
     @Column(columnDefinition = "BODY")
     private String body;
 
+    private EmailStatus status;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 }
