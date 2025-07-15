@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: email
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: 1234
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  rabbitmq:
+    addresses: amqps://gorilla.lmq.cloudamqp.com
+    virtual-host: sdlbgrmo
+    username: sdlbgrmo
+    password: ${AMQP_PASSWORD}

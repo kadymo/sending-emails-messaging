@@ -2,7 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile name="Annotation profile for user" enabled="true">
+      <profile name="Annotation profile for email" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -10,11 +10,13 @@
           <entry name="/home/kadymo/.m2/repository/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
         <module name="user" />
+        <module name="email" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="email" options="-parameters" />
       <module name="user" options="-parameters" />
     </option>
   </component>
