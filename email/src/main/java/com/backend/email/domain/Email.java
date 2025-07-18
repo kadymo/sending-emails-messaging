@@ -21,13 +21,10 @@ public class Email {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private UUID userId;
-    private String from;
-    private String to;
+    private String emailFrom;
+    private String emailTo;
     private String subject;
-
-    @Column(columnDefinition = "BODY")
     private String body;
-
     private EmailStatus status;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
