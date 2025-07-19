@@ -12,17 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/users")
 public class UserController {
     private final UserService service;
-    private final UserProducer producer;
 
     public UserController(UserService service, UserProducer producer) {
         this.service = service;
-        this.producer = producer;
     }
 
     @PostMapping
     public UserDto createUser(@RequestBody UserDto user) {
         UserDto createdUser = service.createUser(user);
-        producer.sendMessage(createdUser);
         return createdUser;
     }
 }
